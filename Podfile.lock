@@ -1,0 +1,13 @@
+PODS:
+  - SECoreTextView (0.8.3)
+  - TTTAttributedLabel (1.13.2)
+
+DEPENDENCIES:
+  - SECoreTextView
+  - TTTAttributedLabel
+
+SPEC CHECKSUMS:
+  SECoreTextView: d5c3f5d7dbef475990db2f21037e1b28cdfca187
+  TTTAttributedLabel: 7c4592f9a806badb8b48dc634cb9800447c51594
+
+COCOAPODS: 0.35.0
