@@ -24,19 +24,28 @@ class TTTAttributedLabelCell : UITableViewCell {
         
 //        let attr = NSAttributedString(string: text)
 //        let size = TTTAttributedLabel.sizeThatFitsAttributedString(attr, withConstraints: CGSize(width: UIScreen.mainScreen().bounds.width - 32, height: 10000), limitedToNumberOfLines: 0)
-//        let string = NSString(string: text)
-//        let options:NSStringDrawingOptions = StringDrawingOptions.combine(NSStringDrawingOptions.UsesLineFragmentOrigin, with: NSStringDrawingOptions.UsesFontLeading)
-//        let attributes: Dictionary = [NSFontAttributeName: UIFont.systemFontOfSize(14.0)]
+        let string = NSString(string: text)
+        let size = CGSize(width: CGRectGetWidth(UIScreen.mainScreen().bounds) - 32, height: CGFloat.max)
+        let options = NSStringDrawingOptions.UsesLineFragmentOrigin
         
-//        text.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 32, height: 10000),
-//            options: NSStringDrawingOptions.UsesLineFragmentOrigin,
-//            attributes: [], context: self)
+        let font = UIFont.systemFontOfSize(14.0)
+        var attributes = [NSFontAttributeName:font]
         
-        let size = CGSize(width: CGRectGetWidth(UIScreen.mainScreen().bounds) - 32, height: 10000)
-        let str = NSString(string: text)
-        let contentSize = str.sizeWithAttributes(nil)
+        let frame = text.boundingRectWithSize(size,
+            options: options,
+            attributes: attributes,
+            context: nil)
+        println("frame \(frame)")
+        let height = ceil(frame.size.height) + 32 + 1
         
-        return contentSize.height + 32
+        let attr = NSMutableAttributedString(string: text)
+        attr.addFontAttribute(font, range: NSMakeRange(0, attr.length))
+        let frame2 = attr.boundingRectWithSize(size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        println("frame \(frame2)")
+        
+        println("height \(height)")
+        
+        return height
     }
     
     func setText(text: String) {

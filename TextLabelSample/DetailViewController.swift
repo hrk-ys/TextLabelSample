@@ -20,7 +20,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var textList = [
         "［http://www.itmedia.co.jp ］基本プランは月額1万4800円、「Pepper」開発者向けに販売開始 http://bit.ly/1LjMY79",
-        "【タイムセール】毎日深夜0時更新！掘り出し物をチェック\n (PC)⇒ http://amzn.to/1AXek02\n (モバイル)⇒ http://amzn.to/1CQB3K7\n ※最安値を狙う方におススメ ",
+        "【タイムセール】毎日深夜0時更新！掘り出し物をチェック\n PC⇒ http://amzn.to/1AXek02\n//amzn.to/1CQB3K7\n※最安値を狙う方におススメ ",
+        "asldkjfalsdkf\nasldkjfalsdkfjasdklfj\nasldkjflaskdfjslf\nalsdjflaskdfja;lksdf;\nalskdflaksdflaksdlfkjasldkfjaldkfjlsadkfj",
+        "⇒\n⇒\n⇒\n⇒\n⇒\n⇒\n⇒\n⇒\n⇒\n⇒\n⇒\nこの文字だめ",
     ]
     
     override func viewDidLoad() {

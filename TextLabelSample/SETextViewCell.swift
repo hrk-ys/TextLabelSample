@@ -18,12 +18,15 @@ class SETextViewCell : UITableViewCell, SETextViewDelegate {
     private func initialize() {
         self.textView.delegate = self
         self.textView.font = UIFont.systemFontOfSize(14.0)
+        self.textView.lineSpacing = 4
     }
     
     class func heightWithText(text: String) -> CGFloat{
         
         let attr = self.createAttributedString(text)
-        let size = SETextView.frameRectWithAttributtedString(attr, constraintSize: CGSize(width: UIScreen.mainScreen().bounds.width - 32, height: 10000))
+        let size = SETextView.frameRectWithAttributtedString(attr, constraintSize: CGSize(width: UIScreen.mainScreen().bounds.width - 32, height: 10000),
+            lineSpacing: 4,
+            font:UIFont.systemFontOfSize(14.0) )
         return size.height + 32
     }
     
